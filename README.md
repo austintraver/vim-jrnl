@@ -1,64 +1,48 @@
-# Syntax for jrnl files in vim
+# vim-jrnl
 
-This is a syntax file for neovim and vim to support [jrnl](https://github.com/jrnl-org/jrnl)
-files. It's intended to work on top of the built-in `markdown` syntax (it might also work
-with other markdown syntaxes, but I haven't tested it).
+## Description
 
-I've been using it personally for a few months, so the glaring bugs are ironed out, but
-it's still in early development, so please report any issues you find.
+This repository provides support for `.jrnl` files, created by the [`jrnl`](https://github.com/jrnl-org/jrnl) command from within Vim & NeoVim. 
 
-While I'm open to adding new features, the current feature set reflects my own personal
-usage of jrnl. My main use cases--in no particular order--are:
-- Keeping a personal journal
-- Writing posts about various media I watch or play (tv shows, movies, video games, etc)
-  that I later post on social media
-- Taking notes
-- Making todo lists
+The image below shows a file with and without this plugin installed, on the left-hand and right-hand sides respectively.
 
-## Screenshots
-So that you know what you're getting, here's a screenshot of the same file without any
-syntax highlighting (left), and with this plugin installed (right).
-
-![Screenshot with and without plugin installed](images/screenshot.png)
-
+![screenshot with and without plugin installed](https://user-images.githubusercontent.com/25112463/138997004-d7127510-5ae6-41d6-ba6e-d7e18f0bf558.png)
 
 ## Features
-- Supports jrnl header lines
-- Supports [Nerd Fonts](https://www.nerdfonts.com/)
-- Highlights jrnl tags (e.g. @tag)
-- Todo boxes (requires conceal)
-  - `- [ ]` Empty checkbox with highlighted line
-  - `- [x]` Checked box with greyed indented text
-  - `- [i]` Info icon
-  - `- [i]` Question icon
-  - `- [*]` Star icon
-  - `- [!]` High priority item
-  - `- [c]` Cancelled item (greyed out with an x instead of a check)
-  - `- [.]` Current item (a la todo.txt)
-- Nicer bullet points
-- Spoiler tags
-- Detect episode markers (e.g. s11e09), and exempt from spellcheck
-- Folding
-  - Level 1 fold on every jrnl entry
-  - More fold levels for more higher markdown heading levels (e.g. `### Heading 3`)
-  - Another fold level for a line starting with bolded text
 
+The current set of supported features includes:
 
-## Caveats
-As mentioned above, this has so far been my personal syntax file that is just now being
-made into a standalone plugin. As such, it's not particularly well tested (although I do
-use it daily).
+* `jrnl` header lines
 
-I'm open to making this more widely usable for more users, but want new features to have
-at least somewhat wide usage. Please feel free to suggest any new features, but be aware
-that I decide not to add if I see the usage as too niche.
+* `jrnl` tags (e.g.: `@tag`)
 
-Also, I've been using neovim for a few years now, but recognize that a few years is
-still considered relatively new in the vim community. This is my first plugin, and I'm
-open to feedback, but please be kind.
+* Bullet points
 
+* Spoiler tags
+
+* Folding
+  * Level 1 fold on every jrnl entry
+  * More fold levels for more higher markdown heading levels (e.g. `### Heading 3`)
+  * Another fold level for a line starting with bolded text
+
+* Todo boxes (requires conceal)
+  * `- [ ]` Empty checkbox with highlighted line
+  * `- [x]` Checked box with greyed indented text
+  * `- [i]` Info icon
+  * `- [i]` Question icon
+  * `- [*]` Star icon
+  * `- [!]` High priority item
+  * `- [c]` Cancelled item (greyed out with an "x" instead of a "check")
+  * `- [.]` Current item (via `todo.txt`)
+
+* Detect episode markers (e.g. s11e09), and exempt from spellcheck
+
+* [Nerd Fonts][] 
+
+Please feel free to suggest any new features, but be aware that features with use-cases that are too niche are unlikely to be approved.
 
 ## Installation
+
 See a few example below, or refer to your plugin manager's documentation.
 
 ### [Packer][packer]
@@ -79,7 +63,7 @@ Plugin 'wren/jrnl.vim'
 Plug 'wren/jrnl.vim'
 ```
 
+[Nerd Fonts]: https://www.nerdfonts.com/
 [packer]: https://github.com/wbthomason/packer.nvim
 [vundle]: https://github.com/gmarik/vundle
 [plug]: https://github.com/junegunn/vim-plug
-
